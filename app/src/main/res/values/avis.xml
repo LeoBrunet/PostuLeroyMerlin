@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="avis1">
-        <item>L avis le plus cool du monde</item>
-        <item>5.0</item>
-        <item>Je l ai fait ici ou la bas</item>
+    <string-array name="avis1Text">
+        <item>L\'avis le plus cool du monde</item>
+        <item>Je l\'ai fait ici ou la bas</item>
         <item>Super cool cet avis</item>
     </string-array>
+    <integer name="avis1Note">5</integer>
 </resources>
