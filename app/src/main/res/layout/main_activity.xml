@@ -7,6 +7,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/vertleroy">
@@ -19,15 +20,22 @@
     </RelativeLayout>
 
     <FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <com.luseen.spacenavigation.SpaceNavigationView
-        android:id="@+id/space"
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:centre_button_icon="@drawable/ic_loupe"/>
-
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/space"
+        android:layout_marginTop="0dp">
     </FrameLayout>
+
+        <com.luseen.spacenavigation.SpaceNavigationView
+            android:id="@+id/space"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            app:active_centre_button_icon_color="@color/black"
+            app:centre_button_icon="@drawable/ic_loupe" />
+
+
 </RelativeLayout>
