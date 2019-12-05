@@ -16,7 +16,7 @@
             android:id="@+id/titreOffre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CHEF DE PROJET SUPPLY CHAIN H/F"
+            android:text=""
             android:textSize="18sp"
             android:textStyle="bold"
             app:fontFamily="@font/urania" />

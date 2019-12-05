@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    /*private boolean loadFragement(Fragment fragment){
+    private boolean loadFragement(Fragment fragment){
         if(fragment != null){
             //getSupportFragmentManager().beginTransaction().replace(id.container, fragment).commit();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return false;
-    }*/
+    }
 
 
 }

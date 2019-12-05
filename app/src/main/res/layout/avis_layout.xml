@@ -21,7 +21,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
                 android:orientation="vertical">
@@ -29,7 +29,7 @@
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
-                    android:layout_height="0"
+                    android:layout_height="0dp"
                     android:layout_weight="0.5"
                     android:gravity="center"
                     android:text="@string/defaultNote"
@@ -47,7 +47,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.7"
                 android:orientation="vertical">
@@ -55,7 +55,7 @@
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="match_parent"
-                    android:layout_height="0"
+                    android:layout_height="0dp"
                     android:layout_weight="0.5"
                     android:gravity="center_vertical"
                     android:text="@string/defaultTitreAvis"
@@ -64,7 +64,7 @@
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
-                    android:layout_height="0"
+                    android:layout_height="0dp"
                     android:layout_weight="0.5"
                     android:text="@string/defaultSoustitreAvis"
                     android:textSize="24sp" />
