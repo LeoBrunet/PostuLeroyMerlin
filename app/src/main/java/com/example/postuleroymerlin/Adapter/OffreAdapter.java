@@ -61,6 +61,10 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder
         experience.setText(mDataset.get(position).getExperience());
         filiere.setText(mDataset.get(position).getFiliere());
 
+        if (position=mDataset.size()){
+
+        }
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)
