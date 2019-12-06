@@ -69,8 +69,6 @@ public class Questions extends AppCompatActivity {
 
 
                 tvsalaire.setText(salaire+" €");
-
-                btnsalaire.setClickable(false);
             }
         });
 

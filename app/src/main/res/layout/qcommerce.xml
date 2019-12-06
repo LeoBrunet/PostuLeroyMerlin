@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/grey_light">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/rectangle_arrondi"
+        android:padding="10dp"
+        android:layout_margin="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -155,13 +159,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rectangle_arrondi_vert"
-            android:text="Simuler salaire" />
+            android:text="Simuler salaire"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/urania"
+            android:textColor="@color/space_white"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urania"
+            android:layout_marginBottom="5dp"
+            android:text="Salaire estimé :">
+
+        </TextView>
         <TextView
             android:id="@+id/tvsalaire"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textSize="50sp"
+            android:fontFamily="@font/urania"/>
 
     </LinearLayout>
 </ScrollView>

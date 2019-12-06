@@ -1,9 +1,16 @@
 package com.example.postuleroymerlin;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -42,10 +49,31 @@ public class MainActivity extends AppCompatActivity {
         spaceNavigationView.setActiveSpaceItemColor(ContextCompat.getColor(this, R.color.vertleroy));
         spaceNavigationView.setSpaceBackgroundColor(ContextCompat.getColor(this, R.color.black));
 
+        final Dialog d = new Dialog(this, R.style.DialogTheme);
+        d.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        d.setContentView(R.layout.filtres);
+        CheckBox rh = d.findViewById(R.id.rh);
+        CheckBox commerce = d.findViewById(R.id.commerce);
+        CheckBox communication = d.findViewById(R.id.communication);
+        CheckBox tresorier = d.findViewById(R.id.tresorier);
+        CheckBox service_client = d.findViewById(R.id.service_client);
+        TextView postuler = d.findViewById(R.id.postuler);
+        postuler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        Window window = d.getWindow();
+        WindowManager.LayoutParams wlp = window.getAttributes();
+        wlp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        wlp.gravity = Gravity.BOTTOM;
+        window.setAttributes(wlp);
+
         spaceNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
             public void onCentreButtonClick() {
-                Toast.makeText(MainActivity.this,"onCentreButtonClick", Toast.LENGTH_SHORT).show();
+                d.show();
             }
 
             @Override

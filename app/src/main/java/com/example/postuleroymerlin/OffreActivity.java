@@ -25,12 +25,21 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import com.example.postuleroymerlin.Model.OffreDetails;
-
 public class OffreActivity extends AppCompatActivity {
 
     private TextView postuler;
     private OffreDetails offreDetails;
+
+    private TextView titreOffre;
+    private TextView publi;
+    private TextView typeContrat;
+    private TextView lieu;
+    private TextView experience;
+    private TextView filiere;
+    private TextView descpara1;
+    private TextView descpara2;
+    private TextView profil;
+    private TextView lienComplet;
     private TextView salaire;
 
     @Override
@@ -38,34 +47,70 @@ public class OffreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.offre_activity);
 
+        int position = getIntent().getIntExtra("position", -1);
+
+        titreOffre = findViewById(R.id.titreOffre);
+        publi = findViewById(R.id.titre);
+        typeContrat = findViewById(R.id.create);
+        lieu = findViewById(R.id.description);
+        experience = findViewById(R.id.experience);
+        filiere = findViewById(R.id.filiere);
+        descpara1 = findViewById(R.id.descpara1);
+        descpara2 = findViewById(R.id.descpara2);
+        profil = findViewById(R.id.profil);
+        lienComplet = findViewById(R.id.lienComplet);
         salaire = findViewById(R.id.salaire);
+
         postuler = findViewById(R.id.postuler);
         postuler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("http://www.google.fr");
+                Uri uri = Uri.parse(offreDetails.getUri());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
         });
+
         salaire.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), Questions.class);
+                startActivity(i);
+            }
+        });
 
-                Intent intent = new Intent(getApplicationContext(),Questions.class);
+        lienComplet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse(offreDetails.getLien());
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
         });
 
+        try {
+            offreDetails = parserXMLOnOneElement(position);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
 
-
-
+        titreOffre.setText(offreDetails.getOffrePreface().getTitre());
+        publi.setText("Publiée le : "+offreDetails.getOffrePreface().getPublication());
+        typeContrat.setText(offreDetails.getOffrePreface().getContrat());
+        lieu.setText(offreDetails.getOffrePreface().getLieu());
+        experience.setText(offreDetails.getOffrePreface().getExperience());
+        filiere.setText(offreDetails.getOffrePreface().getFiliere());
+        descpara1.setText(offreDetails.getParagraphe1());
+        descpara2.setText(offreDetails.getParagraphe2());
+        profil.setText(offreDetails.getProfil());
     }
 
-    private OffreDetails parserXMLOnOneElement() throws IOException, SAXException, ParserConfigurationException {
+    private OffreDetails parserXMLOnOneElement(int position) throws IOException, SAXException, ParserConfigurationException {
         OffreDetails offre = null;
-
-        int position = getIntent().getIntExtra("position", -1);
 
         InputStream inputFile = getResources().getAssets().open("offre.xml");
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();

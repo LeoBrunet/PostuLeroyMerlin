@@ -9,8 +9,8 @@
         android:id="@+id/textView11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:text="Quel filière vous intéresse?"
         android:textStyle="bold"
@@ -18,33 +18,49 @@
         android:textSize="24sp"
         android:textColor="@color/black"/>
     <CheckBox
-        android:id="@+id/checkBox1"
+        android:id="@+id/rh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ressources Humaines"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="20dp"/>
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/commerce"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Commerce"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="20dp"/>
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/communication"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Communication"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="20dp"/>
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/service_client"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Service client"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="20dp"/>
     <CheckBox
-        android:id="@+id/checkBox5"
+        android:id="@+id/tresorier"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Trésorier"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="20dp"
+       />
+
+    <TextView
+        android:id="@+id/postuler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/rectangle_arrondi_vert"
+        android:gravity="center"
+        android:text="RECHERCHER"
+        android:textColor="@color/space_white"
+        android:textSize="24sp"
+        android:fontFamily="@font/urania"></TextView>
+
 </LinearLayout>
