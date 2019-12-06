@@ -328,17 +328,18 @@ Tu es résilient, pédagogue, à l'écoute et empathique."
                     android:fontFamily="@font/urania"></TextView>
 
                 <TextView
+                    android:id="@+id/salaire"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/rectangle_arrondi_vert"
+                    android:fontFamily="@font/urania"
                     android:gravity="center"
                     android:text="SALAIRE POTENTIEL"
                     android:textColor="@color/space_white"
-                    android:textSize="24sp"
-                    android:fontFamily="@font/urania"></TextView>
+                    android:textSize="24sp"></TextView>
             </LinearLayout>
 
         </LinearLayout>
