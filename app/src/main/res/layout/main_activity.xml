@@ -37,13 +37,14 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"
         android:layout_above="@+id/space"
-        android:layout_marginTop="0dp">
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="-25dp">
 
-        <Button
+        <!--<Button
             android:id="@+id/btnQuestions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Questions" />
+            android:text="Questions" />-->
     </FrameLayout>
 
         <com.luseen.spacenavigation.SpaceNavigationView
@@ -53,7 +54,8 @@
             android:layout_alignParentBottom="true"
             android:layout_gravity="bottom"
             app:active_centre_button_icon_color="@color/black"
-            app:centre_button_icon="@drawable/ic_loupe" />
+            app:centre_button_icon="@drawable/ic_loupe"
+            android:background="@color/transparent"/>
 
 
 </RelativeLayout>

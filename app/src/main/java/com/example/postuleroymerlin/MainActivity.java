@@ -26,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        btnQuestions = findViewById(R.id.btnQuestions);
+        loadFragement(new OffreFragment());
+
+        //btnQuestions = findViewById(R.id.btnQuestions);
 
         spaceNavigationView = (SpaceNavigationView) findViewById(R.id.space);
         spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
@@ -60,13 +62,13 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        btnQuestions.setOnClickListener(new View.OnClickListener() {
+        /*btnQuestions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Questions.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
     }
