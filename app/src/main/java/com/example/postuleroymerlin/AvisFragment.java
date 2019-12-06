@@ -91,9 +91,9 @@ public class AvisFragment extends Fragment {
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element eElement = (Element) node;
                 String title = eElement.getElementsByTagName("title").item(0).getTextContent();
-                String subtitle = eElement.getElementsByTagName("contrat").item(0).getTextContent();
-                String note = eElement.getElementsByTagName("lieu").item(0).getTextContent();
-                String text = eElement.getElementsByTagName("experience").item(0).getTextContent();
+                String subtitle = eElement.getElementsByTagName("subTitle").item(0).getTextContent();
+                String note = eElement.getElementsByTagName("note").item(0).getTextContent();
+                String text = eElement.getElementsByTagName("text").item(0).getTextContent();
                 avis = new Avis(title, subtitle, text, note);
             }
             result.add(avis);

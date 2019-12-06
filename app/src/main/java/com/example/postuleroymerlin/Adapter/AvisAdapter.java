@@ -3,6 +3,7 @@ package com.example.postuleroymerlin.Adapter;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -58,7 +59,15 @@ public class AvisAdapter extends RecyclerView.Adapter<AvisAdapter.MyViewHolder> 
         TextView titre = holder.linearLayout.findViewById(R.id.titre);
         TextView create = holder.linearLayout.findViewById(R.id.create);
         TextView description = holder.linearLayout.findViewById(R.id.description);
+        ImageView noteImg = holder.linearLayout.findViewById(R.id.noteImg);
 
+        if(note.equals("4")){
+            noteImg.setImageResource(R.drawable.stars4);
+        }else if(note.equals("4.5")){
+            noteImg.setImageResource(R.drawable.stars45);
+        }else{
+            noteImg.setImageResource(R.drawable.stars5);
+        }
 
         note.setText(mDataset.get(position).getNote()+"");
         titre.setText(mDataset.get(position).getTitre());
