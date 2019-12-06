@@ -3,7 +3,6 @@ package com.example.postuleroymerlin.Adapter;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -61,9 +60,6 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder
         experience.setText(mDataset.get(position).getExperience());
         filiere.setText(mDataset.get(position).getFiliere());
 
-        if (position=mDataset.size()){
-
-        }
 
     }
 
