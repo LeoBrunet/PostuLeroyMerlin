@@ -1,6 +1,9 @@
 package com.example.postuleroymerlin;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -16,11 +19,14 @@ import com.luseen.spacenavigation.SpaceOnClickListener;
 public class MainActivity extends AppCompatActivity {
 
     private SpaceNavigationView spaceNavigationView;
+    private Button btnQuestions;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+
+        btnQuestions = findViewById(R.id.btnQuestions);
 
         spaceNavigationView = (SpaceNavigationView) findViewById(R.id.space);
         spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
@@ -46,6 +52,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemReselected(int itemIndex, String itemName) {
                 Toast.makeText(MainActivity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
+            }
+
+
+        });
+
+        btnQuestions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Questions.class);
+                startActivity(intent);
             }
         });
 
