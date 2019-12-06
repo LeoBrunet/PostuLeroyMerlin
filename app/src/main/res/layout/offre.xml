@@ -32,7 +32,7 @@
 
         </LinearLayout>
         <TextView
-            android:id="@+id/publi"
+            android:id="@+id/titre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -56,7 +56,7 @@
                 android:layout_height="20dp"
                 android:src="@drawable/ic_passage_of_time" />
             <TextView
-                android:id="@+id/typeContrat"
+                android:id="@+id/create"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -78,7 +78,7 @@
                 android:layout_height="20dp"
                 android:src="@drawable/ic_placeholder_for_map" />
             <TextView
-                android:id="@+id/lieu"
+                android:id="@+id/description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
