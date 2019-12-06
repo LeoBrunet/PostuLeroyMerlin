@@ -16,20 +16,58 @@
         android:orientation="vertical"
         android:padding="10dp">
 
-        <TextView
-            android:id="@+id/titreOffre"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CHEF DE PROJET SUPPLY CHAIN H/F "
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/titreOffre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHEF DE PROJET SUPPLY CHAIN H/F "
+                android:textSize="18sp"
+                android:textStyle="bold"/>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:gravity="right"
+                android:layout_gravity="right">
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    app:srcCompat="@drawable/logo_lm" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
         <TextView
             android:id="@+id/publi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Publiée le: 5/12/2019"
-            android:textSize="12sp" />
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:text="" />
+
+
 
 
         <LinearLayout
@@ -131,32 +169,10 @@
             android:layout_marginLeft="0dp"
             android:layout_marginTop="10dp"
             android:text="En savoir plus sur l'annonce"
-            android:textColor="#346199"></TextView>
+            android:textColor="#346199"
+            android:textStyle="italic"></TextView>
 
-        <RelativeLayout
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="0dp">
 
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="0dp"
-                android:layout_marginRight="0dp"
-                app:srcCompat="@drawable/logo_lm" />
-        </RelativeLayout>
 
 
     </LinearLayout>

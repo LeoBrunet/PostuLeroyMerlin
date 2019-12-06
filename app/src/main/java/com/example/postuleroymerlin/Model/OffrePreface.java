@@ -3,7 +3,7 @@ package com.example.postuleroymerlin.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Offre {
+public class OffrePreface {
 
     private String titre;
     private String contrat;
@@ -12,9 +12,9 @@ public class Offre {
     private String filiere;
     private String publication;
 
-    private List<Offre> offres = new ArrayList<>();
+    private List<OffrePreface> offres = new ArrayList<>();
 
-    public Offre(String titre, String contrat, String lieu, String experience, String filiere, String publication) {
+    public OffrePreface(String titre, String contrat, String lieu, String experience, String filiere, String publication) {
         this.titre = titre;
         this.contrat = contrat;
         this.lieu = lieu;
@@ -24,7 +24,7 @@ public class Offre {
         offres.add(this);
     }
 
-    public List<Offre> getOffres(){
+    public List<OffrePreface> getOffres(){
         return this.offres;
     }
 
