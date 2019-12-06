@@ -17,8 +17,20 @@ import com.example.postuleroymerlin.Adapter.OffreAdapter;
 import com.example.postuleroymerlin.Model.OffrePreface;
 import com.example.postuleroymerlin.Utils.RecyclerItemClickListener;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 public class OffreFragment extends Fragment {
     private RecyclerView recyclerview;
@@ -47,34 +59,17 @@ public class OffreFragment extends Fragment {
         );
 
         offres = new ArrayList<>();
-        chargerRecyclerView(chargerOffres());
+        try {
+            chargerRecyclerView(parserXML());
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         return root;
-    }
-
-    private List<OffrePreface> chargerOffres(){
-        OffrePreface offre = new OffrePreface("CHEF DE SECTEUR COMMERCE - MANAGER BUSINESS UNIT - H/F", "CDI", "BRIVE", "1-2","Commerce", "4/12/2019");
-        OffrePreface offre1 = new OffrePreface("CHEF DE SECTEUR COMMERCE - MANAGER BUSINESS UNIT - H/F", "CDI", "BRIVE", "1-2","Commerce", "4/12/2019");
-        OffrePreface offre2 = new OffrePreface("CHEF DE SECTEUR COMMERCE - MANAGER BUSINESS UNIT - H/F", "CDI", "BRIVE", "1-2","Commerce", "4/12/2019");
-        OffrePreface offre3 = new OffrePreface("CHEF DE SECTEUR COMMERCE - MANAGER BUSINESS UNIT - H/F", "CDI", "BRIVE", "1-2","Commerce", "4/12/2019");
-        OffrePreface offre4 = new OffrePreface("CHEF DE SECTEUR COMMERCE - MANAGER BUSINESS UNIT - H/F", "CDI", "BRIVE", "1-2","Commerce", "4/12/2019");
-        OffrePreface offre5 = new OffrePreface("CHEF DE SECTEUR COMMERCE - MANAGER BUSINESS UNIT - H/F", "CDI", "BRIVE", "1-2","Commerce", "4/12/2019");
-        OffrePreface offre6 = new OffrePreface("CHEF DE SECTEUR COMMERCE - MANAGER BUSINESS UNIT - H/F", "CDI", "BRIVE", "1-2","Commerce", "4/12/2019");
-        OffrePreface offre7 = new OffrePreface("CHEF DE SECTEUR COMMERCE - MANAGER BUSINESS UNIT - H/F", "CDI", "BRIVE", "1-2","Commerce", "4/12/2019");
-        OffrePreface offre8 = new OffrePreface("CHEF DE SECTEUR COMMERCE - MANAGER BUSINESS UNIT - H/F", "CDI", "BRIVE", "1-2","Commerce", "4/12/2019");
-
-        offres.add(offre);
-        offres.add(offre1);
-        offres.add(offre2);
-        offres.add(offre3);
-        offres.add(offre4);
-        offres.add(offre5);
-        offres.add(offre6);
-        offres.add(offre7);
-        offres.add(offre8);
-
-        Log.e("testest", "offres "+offres.size());
-        return offres;
     }
 
     private void chargerRecyclerView(List<OffrePreface> offres){
@@ -85,5 +80,35 @@ public class OffreFragment extends Fragment {
         recyclerview.setLayoutManager(layoutManager);
         adapter.notifyDataSetChanged();
         recyclerview.setAdapter(adapter);
+    }
+
+    private List<OffrePreface> parserXML() throws IOException, SAXException, ParserConfigurationException {
+        List<OffrePreface> result = new ArrayList<>();
+
+        InputStream inputFile = getResources().getAssets().open("offre.xml");
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
+        Document doc = dBuilder.parse(inputFile);
+        doc.getDocumentElement().normalize();
+        NodeList list = doc.getElementsByTagName("offre");
+
+        Log.e("LA", list.getLength()+"");
+        for(int i = 0; i < list.getLength(); i++) {
+            OffrePreface offre = null;
+            Node node = list.item(i);
+            if (node.getNodeType() == Node.ELEMENT_NODE) {
+                Element eElement = (Element) node;
+                String title = eElement.getElementsByTagName("title").item(0).getTextContent();
+                String contrat = eElement.getElementsByTagName("contrat").item(0).getTextContent();
+                String lieu = eElement.getElementsByTagName("lieu").item(0).getTextContent();
+                String experience = eElement.getElementsByTagName("experience").item(0).getTextContent();
+                String filiere = eElement.getElementsByTagName("filiere").item(0).getTextContent();
+                String publication = eElement.getElementsByTagName("publication").item(0).getTextContent();
+                offre = new OffrePreface(title, contrat, lieu, experience, filiere, publication);
+            }
+            result.add(offre);
+        }
+        return result;
     }
 }
