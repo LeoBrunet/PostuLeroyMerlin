@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingLeft="5dp"
+    android:paddingRight="5dp"
     android:paddingTop="5dp">
 
     <LinearLayout
@@ -19,32 +20,7 @@
             android:layout_height="150dp"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.3"
-                android:background="@drawable/rectangle_arrondi"
-                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/note"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="0.5"
-                    android:gravity="center"
-                    android:text="@string/defaultNote"
-                    android:textSize="36sp"
-                    android:textStyle="bold"/>
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.5"
-                    app:srcCompat="@drawable/stars5" />
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -65,11 +41,53 @@
                 <TextView
                     android:id="@+id/create"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:text="@string/defaultSoustitreAvis"
                     android:textSize="24sp"
                     android:fontFamily="@font/urania"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:background="@drawable/rectangle_arrondi"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/cercle_noir"
+                        app:layout_constraintDimensionRatio="1"
+                        app:layout_constraintEnd_toEndOf="@+id/note"
+                        app:layout_constraintStart_toStartOf="parent" />
+                    <TextView
+                        android:id="@+id/note"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:gravity="center"
+                        android:text="@string/defaultNote"
+                        android:textSize="36sp"
+                        android:textStyle="bold"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0.5"
+                    app:srcCompat="@drawable/stars5"
+                    android:scaleType="fitStart"
+                    android:paddingTop="10dp"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -78,9 +96,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
+            android:layout_marginTop="-30dp"
             android:text="@string/defaultTextAvis"
             android:textSize="24sp"
             android:fontFamily="@font/urania"
@@ -92,28 +110,11 @@
             android:layout_height="wrap_content"
             android:text="Voir l'avis complet"
             android:textColor="#346199"
-            android:fontFamily="@font/urania">
+            android:fontFamily="@font/urania"
+            android:textStyle="italic">
 
         </TextView>
 
-        <RelativeLayout
-            android:layout_width="20dp"
-            android:layout_height="20dp">
-
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="0dp"
-                android:layout_marginRight="0dp"
-                app:srcCompat="@drawable/logo_lm" />
-        </RelativeLayout>
 
     </LinearLayout>
 </LinearLayout>

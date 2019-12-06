@@ -49,6 +49,7 @@ public class OffreFragment extends Fragment {
                 new RecyclerItemClickListener(getContext(), recyclerview ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
                         Intent intent = new Intent(getActivity(), OffreActivity.class);
+                        intent.putExtra("position", position);
                         startActivity(intent);
                     }
 
@@ -109,6 +110,7 @@ public class OffreFragment extends Fragment {
             }
             result.add(offre);
         }
+        Log.e("testest", "size"+result.size() );
         return result;
     }
 }

@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         loadFragement(new OffreFragment());
 
-        loadFragement(new AvisFragment());
+        //loadFragement(new AvisFragment());
 
         //btnQuestions = findViewById(R.id.btnQuestions);
 
@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
         spaceNavigationView.addSpaceItem(new SpaceItem("SEARCH", R.drawable.ic_care_about_environment));
 
         spaceNavigationView.showIconOnly();
-        spaceNavigationView.setCentreButtonColor(ContextCompat.getColor(this, R.color.vertleroy));
-        spaceNavigationView.setActiveSpaceItemColor(ContextCompat.getColor(this, R.color.black));
-        spaceNavigationView.setSpaceBackgroundColor(ContextCompat.getColor(this, R.color.grey));
+        spaceNavigationView.setCentreButtonColor(ContextCompat.getColor(this, R.color.space_white));
+        spaceNavigationView.setActiveSpaceItemColor(ContextCompat.getColor(this, R.color.vertleroy));
+        spaceNavigationView.setSpaceBackgroundColor(ContextCompat.getColor(this, R.color.black));
 
         spaceNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
@@ -56,12 +56,10 @@ public class MainActivity extends AppCompatActivity {
                 if(itemIndex==1){
                     loadFragement(new AvisFragment());
                 }
-                Toast.makeText(MainActivity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onItemReselected(int itemIndex, String itemName) {
-                Toast.makeText(MainActivity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
             }
 
 

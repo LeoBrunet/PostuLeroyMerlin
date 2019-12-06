@@ -44,14 +44,14 @@ public class AvisFragment extends Fragment {
     }
 
     private List<Avis> chargerAvis(){
-        Avis avis1 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
-        Avis avis2 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
-        Avis avis3 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
-        Avis avis4 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
-        Avis avis5 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
-        Avis avis6 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
-        Avis avis7 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
-        Avis avis8 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
+        Avis avis1 = new Avis(5,"Vraiment nul!", "Jean","C\\'est pas fou fou votre entreprise, j\\'ai bien la chocolatine la matin a part ça pas grand chose...");
+        Avis avis2 = new Avis(5,"Vraiment nul!", "Jean","C\\'est pas fou fou votre entreprise, j\\'ai bien la chocolatine la matin a part ça pas grand chose...");
+        Avis avis3 = new Avis(5,"Le titre", "Jean","L'avis de la personne");
+        Avis avis4 = new Avis(5,"Le titre", "Jean","L'avis de la personne");
+        Avis avis5 = new Avis(5,"Le titre", "Jean","L'avis de la personne");
+        Avis avis6 = new Avis(5,"Le titre", "Jean","L'avis de la personne");
+        Avis avis7 = new Avis(5,"Le titre", "Jean","L'avis de la personne");
+        Avis avis8 = new Avis(5,"Le titre", "Jean","L'avis de la personne");
 
         avis.add(avis1);
         avis.add(avis2);

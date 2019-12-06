@@ -25,9 +25,12 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import com.example.postuleroymerlin.Model.OffreDetails;
+
 public class OffreActivity extends AppCompatActivity {
 
     private TextView postuler;
+    private OffreDetails offreDetails;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,6 +46,10 @@ public class OffreActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+
     }
 
     private OffreDetails parserXMLOnOneElement() throws IOException, SAXException, ParserConfigurationException {
