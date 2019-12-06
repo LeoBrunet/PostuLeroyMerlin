@@ -58,7 +58,7 @@ public class OffreFragment extends Fragment {
     }
 
     private void chargerRecyclerView(List<Offre> offres){
-        adapter = new OffreAdapter(offres);
+        adapter = new OffreAdapter(offres, this.getContext());
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setStackFromEnd(true);
         layoutManager.setReverseLayout(true);

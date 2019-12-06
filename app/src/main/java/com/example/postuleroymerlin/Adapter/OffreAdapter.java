@@ -1,5 +1,6 @@
 package com.example.postuleroymerlin.Adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -14,6 +15,7 @@ import java.util.List;
 
 public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder> {
     private List<Offre> mDataset;
+    private Context context;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -28,8 +30,9 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public OffreAdapter(List<Offre> offres) {
+    public OffreAdapter(List<Offre> offres, Context context) {
         mDataset = offres;
+        this.context=context;
     }
 
     // Create new views (invoked by the layout manager)
@@ -60,6 +63,22 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder
         experience.setText(mDataset.get(position).getExperience());
         filiere.setText(mDataset.get(position).getFiliere());
 
+        if (position==mDataset.size()){
+            ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) holder.linearLayout.getLayoutParams();
+
+            final float scale = context.getResources().getDisplayMetrics().density;
+            int left=5;
+            int top=5;
+            int right=5;
+            int bottom=20;
+            // convert the DP into pixel
+            int pixel_left = (int) (left * scale + 0.5f);
+            int pixel_top = (int) (top * scale + 0.5f);
+            int pixel_right = (int) (right * scale + 0.5f);
+            int pixel_bottom = (int) (bottom * scale + 0.5f);
+
+            lp.setMargins(pixel_left, pixel_top, pixel_right, pixel_bottom);
+        }
 
     }
 
