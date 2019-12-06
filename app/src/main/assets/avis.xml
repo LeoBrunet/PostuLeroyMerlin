@@ -1,9 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
-	<avis1>
-		<title></title>
-		<subTitle></subTitle>
-		<note></note>
-		<text></text>
-	</avis1>
+  <avis>
+     <title>Environnement de travail très familiale</title>
+     <subTitle>PREPARATEUR DE COMMANDE</subTitle>
+     <note>4</note>
+     <text>Une entreprise très intéressante avec beaucoup de choses à voir et à apprendre. Les ouvriers sympathiques sauf pour certains secteurs.</text>
+  </avis>
+  <avis>
+     <title>Environnement très agréable</title>
+     <subTitle>MISE EN RAYON</subTitle>
+     <note>4</note>
+     <text>Une très bonne ambiance, le personnel est très solidaire</text>
+  </avis>
+  <avis>
+     <title>Recommande</title>
+     <subTitle>EMPLOYE DE COMMERCE</subTitle>
+     <note>4</note>
+     <text>Je recommande car bon esprit d'entreprise et solidarité entre salariés</text>
+  </avis>
+  <avis>
+     <title>Bon entreprise</title>
+     <subTitle>CHEF DE SECTEUR COMMERCE</subTitle>
+     <note>5</note>
+     <text>Grande autonomie des manegers. Veritables challenges atteignables, realisables... et rénumérateurs</text>
+  </avis>
+  <avis>
+     <title>Bonne ambiance</title>
+     <subTitle>MANUTENTIONNAIRE</subTitle>
+     <note>4</note>
+     <text>Esprit d'équipe et à l'écoute du personnel. Très bon CE pour les embauchés. Implications et évolution... </text>
+  </avis>
+  <avis>
+     <title>Enseigne agréable</title>
+     <subTitle>CONSEILLER DE VENTES</subTitle>
+     <note>5</note>
+     <text>Enseigne des plus agréable, à l'écoute de ses collaborateurs</text>
+  </avis>
+  <avis>
+     <title>Bon entreprise</title>
+     <subTitle>RESPONSABLE LOGISTIQUE</subTitle>
+     <note>5</note>
+     <text>Bonjour, c'est une entreprise où il fait bon vivre, allez-y</text>
+  </avis>
+  <avis>
+     <title>Excellente entreprise</title>
+     <subTitle>RESPONSABLE RAYONS BOISERIE</subTitle>
+     <note>5</note>
+     <text>Une équipe professionnelle, de la disponibilité et une gamme plusque varié.</text>
+  </avis>
+  <avis>
+     <title>Bon magasin</title>
+     <subTitle>ACHETEUR</subTitle>
+     <note>4</note>
+     <text>C'est un magasin que je connais bien et où j'ai fait beaucoup d'achat. Vous pouvez tous acheter làbas à tous prix, je recommande !</text>
+  </avis>
+  <avis>
+     <title>Le client est roi</title>
+     <subTitle>CLIENT HABITUE</subTitle>
+     <note>5</note>
+     <text>Le client est la priorité des conseillers de ventes. A part des produits spécifiques, j'ai trouvé tout ce que je cherchais. Je recommande vivement !  </text>
+  </avis>
 </document>
+

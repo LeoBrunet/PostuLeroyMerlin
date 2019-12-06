@@ -7,13 +7,23 @@ public class OffreDetails {
     private String paragraphe2;
     private String profil;
     private String uri;
+    private String lien;
 
-    public OffreDetails(OffrePreface offrePreface, String paragraphe1, String paragraphe2, String profil, String uri) {
+    public OffreDetails(OffrePreface offrePreface, String paragraphe1, String paragraphe2, String profil, String uri, String lien) {
         this.offrePreface = offrePreface;
         this.paragraphe1 = paragraphe1;
         this.paragraphe2 = paragraphe2;
         this.profil = profil;
         this.uri = uri;
+        this.lien = lien;
+    }
+
+    public String getLien() {
+        return lien;
+    }
+
+    public void setLien(String lien) {
+        this.lien = lien;
     }
 
     public String getUri() {
