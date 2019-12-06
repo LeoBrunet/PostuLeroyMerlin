@@ -61,9 +61,9 @@ public class AvisAdapter extends RecyclerView.Adapter<AvisAdapter.MyViewHolder> 
         TextView description = holder.linearLayout.findViewById(R.id.description);
         ImageView noteImg = holder.linearLayout.findViewById(R.id.noteImg);
 
-        if(note.equals("4")){
+        if(mDataset.get(position).getNote().equals("4")){
             noteImg.setImageResource(R.drawable.stars4);
-        }else if(note.equals("4.5")){
+        }else if(mDataset.get(position).getNote().equals("4.5")){
             noteImg.setImageResource(R.drawable.stars45);
         }else{
             noteImg.setImageResource(R.drawable.stars5);
