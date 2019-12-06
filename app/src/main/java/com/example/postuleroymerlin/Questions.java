@@ -24,7 +24,6 @@ public class Questions extends AppCompatActivity {
 
     private  TextView tvsalaire;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,12 +37,11 @@ public class Questions extends AppCompatActivity {
         cb2 = findViewById(R.id.c2);
         cb3 = findViewById(R.id.c3);
         cb4 = findViewById(R.id.c4);
-
+        tvsalaire = findViewById(R.id.tvsalaire);
 
         btnsalaire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView tvsalaire = new TextView(getApplicationContext());
 
                 int salaire = 1200;
                 if(rb1.isChecked()){
@@ -55,8 +53,24 @@ public class Questions extends AppCompatActivity {
                 if(rb3.isChecked()){
                     salaire += 100;
                 }
+                if(cb1.isChecked()){
+                    salaire += 100;
+                }
+                if(cb2.isChecked()){
+                    salaire += 100;
+                }
+                if(cb3.isChecked()){
+                    salaire += 100;
+                }
+                if(cb4.isChecked()){
+                    salaire += 100;
+                }
+
+
 
                 tvsalaire.setText(salaire+" €");
+
+                btnsalaire.setClickable(false);
             }
         });
 

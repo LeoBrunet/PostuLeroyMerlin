@@ -31,18 +31,28 @@ public class OffreActivity extends AppCompatActivity {
 
     private TextView postuler;
     private OffreDetails offreDetails;
+    private TextView salaire;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.offre_activity);
 
+        salaire = findViewById(R.id.salaire);
         postuler = findViewById(R.id.postuler);
         postuler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Uri uri = Uri.parse("http://www.google.fr");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        salaire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(),Questions.class);
                 startActivity(intent);
             }
         });
