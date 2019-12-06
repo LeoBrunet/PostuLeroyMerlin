@@ -286,6 +286,17 @@ Tu es résilient, pédagogue, à l'écoute et empathique."
                 android:textSize="18sp"
                 />
 
+            <TextView
+                android:id="@+id/lienComplet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:text="Voir l'annonce complète..."
+                android:textColor="#346199"
+                android:textStyle="italic"></TextView>
+
 
         </LinearLayout>
 

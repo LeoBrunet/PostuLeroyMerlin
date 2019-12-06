@@ -28,27 +28,79 @@ import javax.xml.parsers.ParserConfigurationException;
 public class OffreActivity extends AppCompatActivity {
 
     private TextView postuler;
+    private OffreDetails offreDetails;
+
+    private TextView titreOffre;
+    private TextView publi;
+    private TextView typeContrat;
+    private TextView lieu;
+    private TextView experience;
+    private TextView filiere;
+    private TextView descpara1;
+    private TextView descpara2;
+    private TextView profil;
+    private TextView lienComplet;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.offre_activity);
 
+        int position = getIntent().getIntExtra("position", -1);
+
+        titreOffre = findViewById(R.id.titreOffre);
+        publi = findViewById(R.id.publi);
+        typeContrat = findViewById(R.id.typeContrat);
+        lieu = findViewById(R.id.lieu);
+        experience = findViewById(R.id.experience);
+        filiere = findViewById(R.id.filiere);
+        descpara1 = findViewById(R.id.descpara1);
+        descpara2 = findViewById(R.id.descpara2);
+        profil = findViewById(R.id.profil);
+        lienComplet = findViewById(R.id.lienComplet);
+
         postuler = findViewById(R.id.postuler);
         postuler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("http://www.google.fr");
+                Uri uri = Uri.parse(offreDetails.getUri());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
         });
+
+        lienComplet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse(offreDetails.getLien());
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+
+        try {
+            offreDetails = parserXMLOnOneElement(position);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+
+        titreOffre.setText(offreDetails.getOffrePreface().getTitre());
+        publi.setText(offreDetails.getOffrePreface().getPublication());
+        typeContrat.setText(offreDetails.getOffrePreface().getContrat());
+        lieu.setText(offreDetails.getOffrePreface().getLieu());
+        experience.setText(offreDetails.getOffrePreface().getExperience());
+        filiere.setText(offreDetails.getOffrePreface().getFiliere());
+        descpara1.setText(offreDetails.getParagraphe1());
+        descpara2.setText(offreDetails.getParagraphe2());
+        profil.setText(offreDetails.getProfil());
     }
 
-    private OffreDetails parserXMLOnOneElement() throws IOException, SAXException, ParserConfigurationException {
+    private OffreDetails parserXMLOnOneElement(int position) throws IOException, SAXException, ParserConfigurationException {
         OffreDetails offre = null;
-
-        int position = getIntent().getIntExtra("position", -1);
 
         InputStream inputFile = getResources().getAssets().open("offre.xml");
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -73,7 +125,8 @@ public class OffreActivity extends AppCompatActivity {
                     String p2 = eElement.getElementsByTagName("p2").item(0).getTextContent();
                     String profil = eElement.getElementsByTagName("profil").item(0).getTextContent();
                     String lien = eElement.getElementsByTagName("lien").item(0).getTextContent();
-                    offre = new OffreDetails(new OffrePreface(title, contrat, lieu, experience, filiere, publication), p1, p2, profil, lien);
+                    String lien2 = eElement.getElementsByTagName("lien1").item(0).getTextContent();
+                    offre = new OffreDetails(new OffrePreface(title, contrat, lieu, experience, filiere, publication), p1, p2, profil, lien, lien2);
                 }
             }
         }
