@@ -110,6 +110,7 @@ public class OffreFragment extends Fragment {
             }
             result.add(offre);
         }
+        Log.e("testest", "size"+result.size() );
         return result;
     }
 }
