@@ -22,7 +22,7 @@
                 android:text="Aimez-vous le contact humain ?" />
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/rb1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="oui" />
@@ -50,7 +50,7 @@
             android:text="Êtes vous bien organisé ?" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/rb2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="oui" />
@@ -78,7 +78,7 @@
             android:text="Êtes-vous autonome ?" />
 
         <RadioButton
-            android:id="@+id/radioButton8"
+            android:id="@+id/rb3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="oui" />
@@ -107,25 +107,25 @@
                 android:text="Compétences commerciales ?" />
 
             <CheckBox
-                android:id="@+id/checkBox3"
+                android:id="@+id/c1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Négociation" />
 
             <CheckBox
-                android:id="@+id/checkBox4"
+                android:id="@+id/c2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Argumentation" />
 
             <CheckBox
-                android:id="@+id/checkBox2"
+                android:id="@+id/c3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Réthorique" />
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/c4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Témérité" />
@@ -147,13 +147,19 @@
                 android:text="Prétention salariale (en €)" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/salary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="salaire"
                 android:inputType="textPersonName" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simuler salaire" />
 
     </LinearLayout>
 </ScrollView>
