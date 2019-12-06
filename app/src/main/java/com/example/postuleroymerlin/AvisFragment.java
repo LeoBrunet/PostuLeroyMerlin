@@ -15,8 +15,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.postuleroymerlin.Adapter.AvisAdapter;
 import com.example.postuleroymerlin.Model.Avis;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 public class AvisFragment extends Fragment {
 
@@ -37,34 +49,18 @@ public class AvisFragment extends Fragment {
 
 
         avis = new ArrayList<>();
-        chargerRecyclerView(chargerAvis());
+        try {
+            chargerRecyclerView(parserXML());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
 
         return root;
 
-    }
-
-    private List<Avis> chargerAvis(){
-        Avis avis1 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
-        Avis avis2 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
-        Avis avis3 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
-        Avis avis4 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
-        Avis avis5 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
-        Avis avis6 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
-        Avis avis7 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
-        Avis avis8 = new Avis(5,"Le titre", "Jean Laval 06/12/19","L'avis de la personne");
-
-        avis.add(avis1);
-        avis.add(avis2);
-        avis.add(avis3);
-        avis.add(avis4);
-        avis.add(avis5);
-        avis.add(avis6);
-        avis.add(avis7);
-        avis.add(avis8);
-
-        Log.e("testest", "avis "+avis.size());
-
-        return avis;
     }
 
     private void chargerRecyclerView(List<Avis> avis){
@@ -75,5 +71,33 @@ public class AvisFragment extends Fragment {
         recyclerview.setLayoutManager(layoutManager);
         adapter.notifyDataSetChanged();
         recyclerview.setAdapter(adapter);
+    }
+
+    private List<Avis> parserXML() throws IOException, SAXException, ParserConfigurationException {
+        List<Avis> result = new ArrayList<>();
+
+        InputStream inputFile = getResources().getAssets().open("avis.xml");
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
+        Document doc = dBuilder.parse(inputFile);
+        doc.getDocumentElement().normalize();
+        NodeList list = doc.getElementsByTagName("avis");
+
+        Log.e("LA", list.getLength()+"");
+        for(int i = 0; i < list.getLength(); i++) {
+            Avis avis = null;
+            Node node = list.item(i);
+            if (node.getNodeType() == Node.ELEMENT_NODE) {
+                Element eElement = (Element) node;
+                String title = eElement.getElementsByTagName("title").item(0).getTextContent();
+                String subtitle = eElement.getElementsByTagName("contrat").item(0).getTextContent();
+                String note = eElement.getElementsByTagName("lieu").item(0).getTextContent();
+                String text = eElement.getElementsByTagName("experience").item(0).getTextContent();
+                avis = new Avis(title, subtitle, text, note);
+            }
+            result.add(avis);
+        }
+        return result;
     }
 }

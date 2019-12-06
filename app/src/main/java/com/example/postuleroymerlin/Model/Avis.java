@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Avis {
 
-    private float note;
+    private String note;
     private String titre;
     private String create;
     private String Description;
@@ -13,7 +13,7 @@ public class Avis {
     private List<Avis> avis = new ArrayList<>();
 
 
-    public Avis(float note, String titre, String create, String description) {
+    public Avis(String titre, String create, String description, String note) {
         this.note = note;
         this.titre = titre;
         this.create = create;
@@ -30,11 +30,11 @@ public class Avis {
         this.avis = avis;
     }
 
-    public float getNote() {
+    public String getNote() {
         return note;
     }
 
-    public void setNote(float note) {
+    public void setNote(String note) {
         this.note = note;
     }
 
