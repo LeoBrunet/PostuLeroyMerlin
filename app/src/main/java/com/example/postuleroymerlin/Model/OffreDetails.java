@@ -26,7 +26,7 @@ public class OffreDetails {
     }
 
     public void setLien(String lien) {
-        this.lien = lien;
+        this.lien =  lien;
     }
 
     public String getUri() {
