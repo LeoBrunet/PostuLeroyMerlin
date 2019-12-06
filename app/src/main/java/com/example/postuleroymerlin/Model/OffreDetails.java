@@ -17,13 +17,16 @@ public class OffreDetails {
         this.uri = uri;
         this.lien = lien;
     }
+    public OffreDetails(){
+
+    }
 
     public String getLien() {
         return lien;
     }
 
     public void setLien(String lien) {
-        this.lien = lien;
+        this.lien =  lien;
     }
 
     public String getUri() {
