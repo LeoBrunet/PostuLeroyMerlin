@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
         loadFragement(new OffreFragment());
 
+        loadFragement(new AvisFragment());
+
         //btnQuestions = findViewById(R.id.btnQuestions);
 
         spaceNavigationView = (SpaceNavigationView) findViewById(R.id.space);
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCentreButtonClick() {
                 Toast.makeText(MainActivity.this,"onCentreButtonClick", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
@@ -51,12 +54,16 @@ public class MainActivity extends AppCompatActivity {
                 if (itemIndex==0){
                     loadFragement(new OffreFragment());
                 }
+                if(itemIndex==1){
+                    loadFragement(new AvisFragment());
+                }
                 Toast.makeText(MainActivity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onItemReselected(int itemIndex, String itemName) {
                 Toast.makeText(MainActivity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
+
             }
 
 

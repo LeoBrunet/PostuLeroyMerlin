@@ -8,13 +8,13 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.postuleroymerlin.Model.Offre;
+import com.example.postuleroymerlin.Model.Avis;
 import com.example.postuleroymerlin.R;
 
 import java.util.List;
 
-public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder> {
-    private List<Offre> mDataset;
+public class AvisAdapter extends RecyclerView.Adapter<AvisAdapter.MyViewHolder> {
+    private List<Avis> mDataset;
     private Context context;
 
     // Provide a reference to the views for each data item
@@ -34,18 +34,17 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public OffreAdapter(List<Offre> offres, Context context) {
-        mDataset = offres;
+    public AvisAdapter(List<Avis> avis, Context context) {
+        mDataset = avis;
         this.context=context;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public OffreAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent,
-                                                     int viewType) {
+    public AvisAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent,
+                                                        int viewType) {
         // create a new view
-        LinearLayout v = (LinearLayout) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.offre, parent, false);
+        LinearLayout v = (LinearLayout) LayoutInflater.from(parent.getContext()).inflate(R.layout.avis1, parent, false);
         MyViewHolder vh = new MyViewHolder(v);
         return vh;
     }
@@ -55,17 +54,16 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder
     public void onBindViewHolder(MyViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        TextView titreOffre = holder.linearLayout.findViewById(R.id.titreOffre);
-        TextView publi = holder.linearLayout.findViewById(R.id.titre);
-        TextView lieu = holder.linearLayout.findViewById(R.id.description);
-        TextView experience = holder.linearLayout.findViewById(R.id.experience);
-        TextView filiere = holder.linearLayout.findViewById(R.id.filiere);
+        TextView note = holder.linearLayout.findViewById(R.id.note);
+        TextView titre = holder.linearLayout.findViewById(R.id.titre);
+        TextView create = holder.linearLayout.findViewById(R.id.create);
+        TextView description = holder.linearLayout.findViewById(R.id.description);
 
-        titreOffre.setText(mDataset.get(position).getTitre());
-        publi.setText(mDataset.get(position).getPublication());
-        lieu.setText(mDataset.get(position).getLieu());
-        experience.setText(mDataset.get(position).getExperience());
-        filiere.setText(mDataset.get(position).getFiliere());
+
+        note.setText(mDataset.get(position).getNote()+"");
+        titre.setText(mDataset.get(position).getTitre());
+        create.setText(mDataset.get(position).getCreate());
+        description.setText(mDataset.get(position).getDescription());
 
         if (position==mDataset.size()){
             ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) holder.linearLayout.getLayoutParams();
