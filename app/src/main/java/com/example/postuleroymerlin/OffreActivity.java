@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -26,10 +25,12 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import com.example.postuleroymerlin.Model.OffreDetails;
+
 public class OffreActivity extends AppCompatActivity {
 
     private TextView postuler;
-    private TextView salaire;
+    private OffreDetails offreDetails;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,8 +38,6 @@ public class OffreActivity extends AppCompatActivity {
         setContentView(R.layout.offre_activity);
 
         postuler = findViewById(R.id.postuler);
-        salaire = findViewById(R.id.salaire);
-
         postuler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,13 +47,9 @@ public class OffreActivity extends AppCompatActivity {
             }
         });
 
-        salaire.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Questions.class);
-                startActivity(intent);
-            }
-        });
+
+
+
     }
 
     private OffreDetails parserXMLOnOneElement() throws IOException, SAXException, ParserConfigurationException {

@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">PostuLeroyMerlin</string>
-    <string name="defaultNote">5.0</string>
-    <string name="defaultTitreAvis">Titre Avis</string>
-    <string name="defaultSoustitreAvis">Par qui ? Ou ? Quand ?</string>
-    <string name="defaultTextAvis">L\'avis de la personne hihi</string>
+    <string name="defaultNote">5</string>
+    <string name="defaultTitreAvis">Vraiment nul!</string>
+    <string name="defaultSoustitreAvis">Jean</string>
+    <string name="defaultTextAvis">C\'est pas fou fou votre entreprise, j\'ai bien la chocolatine la matin a part ça pas grand chose...</string>
     <string name="questionnaire">Quelques petites questions</string>
 </resources>
