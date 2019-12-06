@@ -62,9 +62,9 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder
         TextView filiere = holder.linearLayout.findViewById(R.id.filiere);
 
         titreOffre.setText(mDataset.get(position).getTitre());
-        publi.setText("Publié le "+mDataset.get(position).getPublication());
+        publi.setText("Publiée le "+mDataset.get(position).getPublication());
         lieu.setText(mDataset.get(position).getLieu());
-        experience.setText(mDataset.get(position).getExperience());
+        experience.setText(mDataset.get(position).getExperience()+ " années d'experiences");
         filiere.setText(mDataset.get(position).getFiliere());
 
         if (position==mDataset.size()){

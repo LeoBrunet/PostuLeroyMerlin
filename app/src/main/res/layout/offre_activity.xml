@@ -47,7 +47,8 @@
                 android:fontFamily="@font/urania"
                 android:textStyle="bold"
                 android:textSize="24sp"
-                android:gravity="center"></TextView>
+                android:gravity="center"
+                android:layout_marginTop="10dp"></TextView>
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools"
@@ -114,7 +115,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="0dp"
-                        android:text="" />
+                        android:text="Publiée le 5/12/2019" />
 
 
 
@@ -209,21 +210,6 @@
                     </LinearLayout>
 
 
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginLeft="0dp"
-                        android:layout_marginTop="10dp"
-                        android:text="En savoir plus sur l'annonce"
-                        android:textColor="#346199"
-                        android:textStyle="italic"></TextView>
-
-
-
-
                 </LinearLayout>
             </LinearLayout>
             <TextView
@@ -233,7 +219,8 @@
                 android:fontFamily="@font/urania"
                 android:textStyle="bold"
                 android:textSize="24sp"
-                android:gravity="center"></TextView>
+                android:gravity="center"
+                android:layout_marginTop="10dp"></TextView>
 
 
         <LinearLayout
@@ -242,32 +229,6 @@
             android:orientation="vertical"
             android:background="@drawable/rectangle_arrondi"
             android:layout_margin="5dp">
-
-            <TextView
-                android:id="@+id/titreAnnonce"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:text="CHEF DE PROJET SUPPLY CHAIN H/F "
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/descAnnonce"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:text="DESCRIPTION DE L'OFFRE "
-                android:textSize="18sp"
-                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/descpara1"
@@ -280,8 +241,7 @@
                 android:layout_marginRight="10dp"
                 android:text="Prêt(e) à booster ton talent ? A oser ton potentiel ? A t’investir dans des projets innovants ?
 Alors rejoins ADEO, une communauté de 34 entreprises responsables, un réseau de 112 000 leaders à l’international, qui s’attachent à créer, accompagner et rendre accessible leur rêve d’habitat à tous les habitants du monde."
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/descpara2"
@@ -293,8 +253,7 @@ Alors rejoins ADEO, une communauté de 34 entreprises responsables, un réseau d
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
                 android:text="Dans le cadre de la transformation Supply Chain, nous cherchons un chef de projet pour mesurer et animer la performance client supply Chain End to End et apporter un service de qualité aux clients du Groupe Adeo."
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/descMissionT"
@@ -305,12 +264,12 @@ Alors rejoins ADEO, une communauté de 34 entreprises responsables, un réseau d
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
-                android:text="Vos missions"
+                android:text="Profil requis"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/mission1"
+                android:id="@+id/profil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -318,57 +277,16 @@ Alors rejoins ADEO, une communauté de 34 entreprises responsables, un réseau d
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
-                android:text="·"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:text="De formation supérieure (école d’ingénieurs ou formation universitaire), tu justifies d’une expérience en gestion de projet sur des problématiques liées au service client.
+Proactif(ve) et doté(e) d'une force de conviction avérée, tu es organisé(e), rigoureux(se) et tu as un bon esprit de synthèse et d'analyse.
 
-            <TextView
-                android:id="@+id/mission2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:text="·"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+Ta maîtrise de l'anglais professionnel est indispensable.
 
-            <TextView
-                android:id="@+id/mission13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:text="·"
+Tu es résilient, pédagogue, à l'écoute et empathique."
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                />
 
-            <TextView
-                android:id="@+id/mission4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:text="·"
-                android:textSize="18sp"
-                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/mission5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:text="·"
-                android:textSize="18sp"
-                android:textStyle="bold" />
         </LinearLayout>
 
             <LinearLayout
