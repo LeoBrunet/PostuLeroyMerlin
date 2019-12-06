@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCentreButtonClick() {
                 Toast.makeText(MainActivity.this,"onCentreButtonClick", Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
@@ -63,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemReselected(int itemIndex, String itemName) {
                 Toast.makeText(MainActivity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
-
             }
 
 

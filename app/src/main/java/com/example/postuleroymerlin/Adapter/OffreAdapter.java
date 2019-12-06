@@ -8,13 +8,13 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.postuleroymerlin.Model.Offre;
+import com.example.postuleroymerlin.Model.OffrePreface;
 import com.example.postuleroymerlin.R;
 
 import java.util.List;
 
 public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder> {
-    private List<Offre> mDataset;
+    private List<OffrePreface> mDataset;
     private Context context;
 
     // Provide a reference to the views for each data item
@@ -23,18 +23,14 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public LinearLayout linearLayout;
-
-
         public MyViewHolder(LinearLayout linearLayout) {
             super(linearLayout);
             this.linearLayout = linearLayout;
         }
-
-
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public OffreAdapter(List<Offre> offres, Context context) {
+    public OffreAdapter(List<OffrePreface> offres, Context context) {
         mDataset = offres;
         this.context=context;
     }
@@ -55,16 +51,18 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder
     public void onBindViewHolder(MyViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        TextView titreOffre = holder.linearLayout.findViewById(R.id.titreOffre);
+        LinearLayout linear = holder.linearLayout.findViewById(R.id.linear);
+        TextView titreOffre = linear.findViewById(R.id.titreOffre);
         TextView publi = holder.linearLayout.findViewById(R.id.titre);
+
         TextView lieu = holder.linearLayout.findViewById(R.id.description);
         TextView experience = holder.linearLayout.findViewById(R.id.experience);
         TextView filiere = holder.linearLayout.findViewById(R.id.filiere);
 
         titreOffre.setText(mDataset.get(position).getTitre());
-        publi.setText(mDataset.get(position).getPublication());
+        publi.setText("Publiée le "+mDataset.get(position).getPublication());
         lieu.setText(mDataset.get(position).getLieu());
-        experience.setText(mDataset.get(position).getExperience());
+        experience.setText(mDataset.get(position).getExperience()+ " années d'experiences");
         filiere.setText(mDataset.get(position).getFiliere());
 
         if (position==mDataset.size()){

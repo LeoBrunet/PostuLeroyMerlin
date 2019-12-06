@@ -18,6 +18,9 @@
         <activity android:name=".Questions">
 
         </activity>
+        <activity android:name=".OffreActivity">
+
+        </activity>
     </application>
 
 </manifest>

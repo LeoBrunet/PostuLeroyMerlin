@@ -1,5 +1,6 @@
 package com.example.postuleroymerlin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,7 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.postuleroymerlin.Adapter.OffreAdapter;
-import com.example.postuleroymerlin.Model.Offre;
+import com.example.postuleroymerlin.Model.OffrePreface;
+import com.example.postuleroymerlin.Utils.RecyclerItemClickListener;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -35,13 +37,26 @@ public class OffreFragment extends Fragment {
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
 
-    private List<Offre> offres;
+    private List<OffrePreface> offres;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.offres_fragment, null);
         recyclerview = (RecyclerView) root.findViewById(R.id.recyclerOffres);
+
+        recyclerview.addOnItemTouchListener(
+                new RecyclerItemClickListener(getContext(), recyclerview ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(getActivity(), OffreActivity.class);
+                        startActivity(intent);
+                    }
+
+                    @Override public void onLongItemClick(View view, int position) {
+                        // do whatever
+                    }
+                })
+        );
 
         offres = new ArrayList<>();
         try {
@@ -57,7 +72,7 @@ public class OffreFragment extends Fragment {
         return root;
     }
 
-    private void chargerRecyclerView(List<Offre> offres){
+    private void chargerRecyclerView(List<OffrePreface> offres){
         adapter = new OffreAdapter(offres, this.getContext());
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setStackFromEnd(true);
@@ -67,8 +82,8 @@ public class OffreFragment extends Fragment {
         recyclerview.setAdapter(adapter);
     }
 
-    private List<Offre> parserXML() throws IOException, SAXException, ParserConfigurationException {
-        List<Offre> result = new ArrayList<Offre>();
+    private List<OffrePreface> parserXML() throws IOException, SAXException, ParserConfigurationException {
+        List<OffrePreface> result = new ArrayList<>();
 
         InputStream inputFile = getResources().getAssets().open("offre.xml");
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -80,7 +95,7 @@ public class OffreFragment extends Fragment {
 
         Log.e("LA", list.getLength()+"");
         for(int i = 0; i < list.getLength(); i++) {
-            Offre offre = null;
+            OffrePreface offre = null;
             Node node = list.item(i);
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element eElement = (Element) node;
@@ -90,7 +105,7 @@ public class OffreFragment extends Fragment {
                 String experience = eElement.getElementsByTagName("experience").item(0).getTextContent();
                 String filiere = eElement.getElementsByTagName("filiere").item(0).getTextContent();
                 String publication = eElement.getElementsByTagName("publication").item(0).getTextContent();
-                offre = new Offre(title, contrat, lieu, experience, filiere, publication);
+                offre = new OffrePreface(title, contrat, lieu, experience, filiere, publication);
             }
             result.add(offre);
         }
