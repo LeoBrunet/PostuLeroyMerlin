@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(int itemIndex, String itemName) {
+                if (itemIndex==0){
+                    loadFragement(new OffreFragment());
+                }
                 Toast.makeText(MainActivity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
             }
 
@@ -53,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private boolean loadFragement(Fragment fragment){
         if(fragment != null){
-            //getSupportFragmentManager().beginTransaction().replace(id.container, fragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.container, fragment);
             transaction.commit();
