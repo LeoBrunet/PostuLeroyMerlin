@@ -90,7 +90,8 @@ public class OffreActivity extends AppCompatActivity {
                     String p2 = eElement.getElementsByTagName("p2").item(0).getTextContent();
                     String profil = eElement.getElementsByTagName("profil").item(0).getTextContent();
                     String lien = eElement.getElementsByTagName("lien").item(0).getTextContent();
-                    offre = new OffreDetails(new OffrePreface(title, contrat, lieu, experience, filiere, publication), p1, p2, profil, lien);
+                    String lien2 = eElement.getElementsByTagName("lien1").item(0).getTextContent();
+                    offre = new OffreDetails(new OffrePreface(title, contrat, lieu, experience, filiere, publication), p1, p2, profil, lien, lien2);
                 }
             }
         }

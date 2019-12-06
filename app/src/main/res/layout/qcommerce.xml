@@ -60,16 +60,17 @@
             android:layout_height="match_parent" >
 
             <RadioButton
+                android:id="@+id/rb2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="oui" />
+
+            <RadioButton
                 android:id="@+id/radioButton5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="non" />
 
-            <RadioButton
-                android:id="@+id/rb2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="oui" />
         </RadioGroup>
 
     </LinearLayout>
@@ -94,16 +95,17 @@
             android:layout_height="match_parent" >
 
             <RadioButton
+                android:id="@+id/rb3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="oui" />
+
+            <RadioButton
                 android:id="@+id/radioButton9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="non" />
 
-            <RadioButton
-                android:id="@+id/rb3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="oui" />
         </RadioGroup>
 
     </LinearLayout>
@@ -152,6 +154,7 @@
             android:id="@+id/btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_arrondi_vert"
             android:text="Simuler salaire" />
 
         <TextView

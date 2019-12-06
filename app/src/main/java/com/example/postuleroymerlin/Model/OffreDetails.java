@@ -17,6 +17,9 @@ public class OffreDetails {
         this.uri = uri;
         this.lien = lien;
     }
+    public OffreDetails(){
+
+    }
 
     public String getLien() {
         return lien;
