@@ -53,9 +53,9 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder
         // - replace the contents of the view with that element
         LinearLayout linear = holder.linearLayout.findViewById(R.id.linear);
         TextView titreOffre = linear.findViewById(R.id.titreOffre);
-        TextView publi = holder.linearLayout.findViewById(R.id.publi);
+        TextView publi = holder.linearLayout.findViewById(R.id.titre);
 
-        TextView lieu = holder.linearLayout.findViewById(R.id.lieu);
+        TextView lieu = holder.linearLayout.findViewById(R.id.description);
         TextView experience = holder.linearLayout.findViewById(R.id.experience);
         TextView filiere = holder.linearLayout.findViewById(R.id.filiere);
 
